@@ -619,26 +619,26 @@ font:
       type: gfonts
       family: Noto+Serif+SC
       weight: 300
-    glyphs: "今天是星期几"
-    #glyphs: ${allowed_characters}
+    #glyphs: "今天是星期几"
+    glyphs: ${allowed_characters}
     id: font_request
-    size: 30
+    size: 16
   - file:
       type: gfonts
       family: Noto+Serif+SC
       weight: 300
-    glyphs: "今天是星期几"
-    #glyphs: ${allowed_characters}
+    #glyphs: "今天是星期几"
+    glyphs: ${allowed_characters}
     id: font_response
-    size: 30
+    size: 16
   - file:
       type: gfonts
       family: Noto+Serif+SC
       weight: 300
-    glyphs: "今天是星期几"
-    #glyphs: ${allowed_characters}
+    #glyphs: "今天是星期几"
+    glyphs: ${allowed_characters}
     id: font_timer
-    size: 30
+    size: 16
 
 text_sensor:
   - id: text_request
