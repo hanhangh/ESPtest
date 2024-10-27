@@ -653,12 +653,12 @@ text_sensor:
     on_value:
       lambda: |-
         std::string name = id(text_response).state.c_str();
-        if (name.length() > 48) {
-          std::string first_line = name.substr(0, 48);  // 获取前48个字符
-          std::string second_line = name.substr(48);     // 获取剩余字符
+        if (name.length() > 36) {
+          std::string first_line = name.substr(0, 36);  // 获取前48个字符
+          std::string second_line = name.substr(36);     // 获取剩余字符
           
-          if (name.length() > 96) {
-            second_line = esphome::str_truncate(second_line.c_str(), 48) + "...";
+          if (name.length() > 69) {
+            second_line = esphome::str_truncate(second_line.c_str(), 33) + "...";
           }
           id(text_response).state = first_line + "\n" + second_line;
         }
