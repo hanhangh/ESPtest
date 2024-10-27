@@ -656,12 +656,11 @@ text_sensor:
         if (name.length() > 48) {
           std::string first_line = name.substr(0, 48);  // 获取前48个字符
           std::string second_line = name.substr(48);     // 获取剩余字符
-          id(text_response).state = first_line + "\n" + second_line;  // 合并为两行
-
+          
           if (name.length() > 96) {
-            std::string truncated = esphome::str_truncate(name.c_str(), 96);  // 定义并截断为96个字符
-            id(text_response).state = (truncated + "...").c_str();  // 更新状态
+            second_line = esphome::str_truncate(second_line.c_str(), 48) + "...";
           }
+          id(text_response).state = first_line + "\n" + second_line;
         }
 
 color:
@@ -730,10 +729,10 @@ display:
           it.image((it.get_width() / 2), (it.get_height() / 2), id(casita_replying), ImageAlign::CENTER);
           it.filled_rectangle(20 , 20 , 280 , 30 , Color::WHITE );
           it.rectangle(20 , 20 , 280 , 30 , Color::BLACK );
-          it.filled_rectangle(20 , 190 , 280 , 30 , Color::WHITE );
-          it.rectangle(20 , 190 , 280 , 30 , Color::BLACK );
+          it.filled_rectangle(20 , 130 , 280 , 30 , Color::WHITE );
+          it.rectangle(20 , 130 , 280 , 30 , Color::BLACK );
           it.printf(30, 25, id(font_request), Color::BLACK, "%s", id(text_request).state.c_str());
-          it.printf(30, 195, id(font_response), Color::BLACK, "%s", id(text_response).state.c_str());
+          it.printf(30, 135, id(font_response), Color::BLACK, "%s", id(text_response).state.c_str());
           id(draw_timer_timeline).execute();
       - id: timer_finished_page
         lambda: |-
