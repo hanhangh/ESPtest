@@ -652,10 +652,10 @@ text_sensor:
 
   - id: text_response
     platform: template
-		update_interval: ${text_update_interval}
+    update_interval: ${text_update_interval}
     on_value:
       lambda: |-
-			  static int scroll_position = 0;
+        static int scroll_position = 0;
         static bool needs_scroll = false;
         static std::string display_text;
         
